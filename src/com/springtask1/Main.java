@@ -27,7 +27,7 @@ public class Main {
 		
 		// PythonLanguage
 		PythonLanguage pythonWorld = (PythonLanguage) context.getBean("framework-python");
-		pythonWorld.learningPython();
+		System.out.println(pythonWorld.learningPython());
 		// to close the IOC container
 		context.close();
 	}
