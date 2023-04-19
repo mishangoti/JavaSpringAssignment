@@ -11,15 +11,23 @@ public class Main {
 		
 		// process to use beans 
 		// start IOC container
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("springtask1.config.xml");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("springtask1config.xml");
 		
 		// retrieve the beans from the xml file
 		// Create an object of classes
-		JavaWorld jwBean = context.getBean("framework", JavaWorld.class);
+//		JavaWorld jwBean = context.getBean("framework-java", JavaWorld.class);
 		
 		// call the relevent method
-		jwBean.learningJava();
+//		jwBean.learningJava();
 		
+		// other way or best practice
+		// JavaLanguage
+//		JavaLanguage javaWorld = (JavaLanguage) context.getBean("framework-java");
+//		javaWorld.learningJava();
+		
+		// PythonLanguage
+		PythonLanguage pythonWorld = (PythonLanguage) context.getBean("framework-python");
+		pythonWorld.learningPython();
 		// to close the IOC container
 		context.close();
 	}
